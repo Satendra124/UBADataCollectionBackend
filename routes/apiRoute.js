@@ -2,7 +2,7 @@ const express = require('express');
 const apiRoute = express.Router();
 const Markers = require('../models/Markers');
 
-apiRoute.post('/addMarker', async (req, res) => {
+apiRoute.post('/markers', async (req, res) => {
     try {
         let data = req.body;
         let marker = new Markers(data);
@@ -15,7 +15,7 @@ apiRoute.post('/addMarker', async (req, res) => {
     }
 })
 
-apiRoute.get('/allMarkers', async (req, res) => {
+apiRoute.get('/markers', async (req, res) => {
     try {
         let data = await Markers.find({});
         res.send(data);
