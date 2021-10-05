@@ -13,7 +13,7 @@ const PORT = process.env.PORT;
 app.use(bodyParser.json());
 app.use(cors());
 app.get('/', (req, res) => {
-    res.send('Everything seems fine! You just landed the homepage of UBA Data API!!!');
+    res.send('Everything is fine! You just landed the homepage of UBA Data API!!!');
 })
 
 app.use('/api', require('./routes/apiRoute'));
