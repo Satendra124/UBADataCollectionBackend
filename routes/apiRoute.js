@@ -1,6 +1,6 @@
 const express = require('express');
 const apiRoute = express.Router();
-const Markers = require('../models/markers');
+const Markers = require('../models/Markers');
 
 apiRoute.post('/addMarker', async (req, res) => {
     try {
