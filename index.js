@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv').config({ path: './config/.env' })
+const cors = require('cors');
+
 
 const app = express();
 
@@ -9,6 +11,7 @@ const URL = process.env.MONGODB_URI.toString();
 const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
+app.use(cors());
 app.get('/', (req, res) => {
     res.send('Everything seems fine! You just landed the homepage of UBA Data API!!!');
 })
