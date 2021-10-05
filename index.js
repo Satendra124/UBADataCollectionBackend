@@ -8,12 +8,14 @@ const cors = require('cors');
 const app = express();
 
 const URL = process.env.MONGODB_URI.toString();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8500;
 
 app.use(bodyParser.json());
 app.use(cors());
 app.get('/', (req, res) => {
-    res.send('Everything is fine! You just landed the homepage of UBA Data API!!!');
+    res.json({
+        message: 'Everything is fine! You just landed the homepage of UBA Data API!!!'
+    })
 })
 
 app.use('/api', require('./routes/apiRoute'));
