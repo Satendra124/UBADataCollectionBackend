@@ -9,6 +9,10 @@ const markersSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    type: { //point, polyline, polygon
+        type: String,
+        required: true
+    },
     coordinates: [
         {
             latitude: {
