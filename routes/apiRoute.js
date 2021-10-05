@@ -10,4 +10,13 @@ apiRoute.post('/add', (req, res) => {
     }
 })
 
+apiRoute.get('/', (req, res) => {
+    try {
+        res.send('Testig /api/');
+    } catch (error) {
+        console.error(error);
+        res.send(error);
+    }
+})
+
 module.exports = apiRoute;
